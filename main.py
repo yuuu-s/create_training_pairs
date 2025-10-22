@@ -94,4 +94,4 @@ if __name__ == "__main__":
         model="gpt-5-nano",  
         rate_limit_sleep=0.6,
     )
-    pipeline.run(2)  # optionally: pipeline.run(max_items=50)
+    pipeline.run()  # optionally: pipeline.run(max_items=50)
