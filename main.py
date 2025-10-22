@@ -2,7 +2,7 @@ from __future__ import annotations
 import os
 import time
 from typing import  Dict, Any, List, Optional
-from utils import JSONLReader, JSONLWriter, LyricsSummarizer, SongEntry, PromptBuilder, LyricsPostProcessor
+from utils import JSONLReader, JSONLWriter, LyricsSummarizer, SongEntry, PromptBuilder, LyricsPostProcessor, get_input_file
 import logging
 
 logging.basicConfig(
@@ -82,7 +82,10 @@ class LyricsDataPipeline:
 
 if __name__ == "__main__":
     # Example usage
-    INPUT_FILE = "data/cleaned_lyrics.txt"     
+    INPUT_FILE = get_input_file(
+    local_path="data/cleaned_lyrics.txt",
+    download_url="https://drive.google.com/file/d/1PqADJhbqqTgyEAXKltgPe6Q0x_zQGLqA/view?usp=drive_link"
+)  
     OUTPUT_FILE = "training_pairs.jsonl"
 
     # Ensure API key is present
