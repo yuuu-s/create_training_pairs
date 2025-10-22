@@ -43,6 +43,7 @@ class LyricsDataPipeline:
         out_rows: List[Dict[str, Any]] = []
 
         for i, raw in enumerate(self.reader.read(), 1):
+            logging.info(f'Calling API for song NO. {i}')
             if max_items and i > max_items:
                 break
 
